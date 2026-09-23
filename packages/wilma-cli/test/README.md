@@ -1,16 +1,12 @@
 # wilma-cli live test
 
 ## Prereqs
-- Run the interactive CLI once so `.wilmai/config.json` exists.
+- Run the interactive CLI once so `~/.config/wilmai/config.json` exists.
 - Build the CLI.
 
 ## Run
+By default the test reads `.wilmai/config.json` at the repo root, so point it at your real config:
 ```bash
-pnpm --filter @wilmai/wilma-cli build
-node test/live.spec.mjs
-```
-
-Optional override:
-```bash
-WILMAI_CONFIG_PATH=/path/to/config.json node test/live.spec.mjs
+pnpm --filter @wilm-ai/wilma-cli build
+WILMAI_CONFIG_PATH=~/.config/wilmai/config.json node test/live.spec.mjs
 ```

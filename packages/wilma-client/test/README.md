@@ -1,13 +1,17 @@
 # wilma-client tests
 
-## Offline tests (fixtures)
-Add fixture-based parser tests here (no secrets needed).
+## Offline tests
+The `parser-*.mjs`, `client-*.mjs` and `network-error.mjs` scripts need no secrets. They use inline fixtures and local HTTP servers. Add new ones to the `test` script in `package.json`.
+
+```bash
+pnpm --filter @wilm-ai/wilma-client test
+```
 
 ## Live test (opt-in)
-1. Copy `test/.env.example` to `test/.env.local` and fill in credentials.
+1. Create `test/.env.local` with `WILMA_BASE_URL`, `WILMA_USERNAME`, `WILMA_PASSWORD` and optionally `WILMA_STUDENT_ID`.
 2. Build the client:
    ```bash
-   pnpm --filter @wilmai/wilma-client build
+   pnpm --filter @wilm-ai/wilma-client build
    ```
 3. Run:
    ```bash
